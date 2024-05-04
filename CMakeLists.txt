@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(ymsm_pole2path)
+project(ymsm_midterm2024_planner)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -104,7 +104,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES ymsm_pole2path
+#  LIBRARIES ymsm_midterm2024_planner
 #  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp
 #  DEPENDS system_lib
 )
@@ -122,7 +122,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/ymsm_pole2path.cpp
+#   src/${PROJECT_NAME}/ymsm_midterm2024_planner.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -133,8 +133,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/ymsm_pole2path_node.cpp)
-add_executable(pole2path src/pole2path src/ymsm_pole2path/pole2path/node.cpp)
+# add_executable(${PROJECT_NAME}_node src/ymsm_midterm2024_planner_node.cpp)
+add_executable(pole2path src/pole2path src/ymsm_midterm2024_planner/pole2path/node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -201,7 +201,7 @@ target_link_libraries(pole2path
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_ymsm_pole2path.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_ymsm_midterm2024_planner.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

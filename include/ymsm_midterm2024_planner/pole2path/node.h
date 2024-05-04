@@ -6,7 +6,7 @@
 #include "ros/ros.h"
 #include "sensor_msgs/LaserScan.h"
 
-namespace ymsm_pole2path::pole2path
+namespace ymsm_midterm2024_planner::pole2path
 {
 
 class Node : public ros::NodeHandle

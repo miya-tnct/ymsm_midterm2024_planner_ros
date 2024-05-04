@@ -1,11 +1,11 @@
-#include "ymsm_pole2path/pole2path/node.h"
+#include "ymsm_midterm2024_planner/pole2path/node.h"
 
 #include "nav_msgs/Path.h"
 
 #include <limits>
 #include <numeric>
 
-namespace ymsm_pole2path::pole2path
+namespace ymsm_midterm2024_planner::pole2path
 {
 
 Node::Node() :
