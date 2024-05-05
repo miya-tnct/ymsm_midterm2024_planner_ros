@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   nav_msgs
   roscpp
+  tf2_ros
 )
 
 ## System dependencies are found with CMake's conventions
@@ -134,7 +135,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/ymsm_midterm2024_planner_node.cpp)
-add_executable(pole2path src/pole2path src/ymsm_midterm2024_planner/pole2path/node.cpp)
+add_executable(planner src/planner src/ymsm_midterm2024_planner/planner/node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -150,7 +151,7 @@ add_executable(pole2path src/pole2path src/ymsm_midterm2024_planner/pole2path/no
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(pole2path
+target_link_libraries(planner
   ${catkin_LIBRARIES}
 )
 
