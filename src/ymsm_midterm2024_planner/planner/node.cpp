@@ -93,19 +93,20 @@ void Node::plan()
   auto relay_front_vec = pole_mid_vec + pole_vertical_vec;
   auto relay_back_vec = pole_mid_vec - pole_vertical_vec;
 
-  if (relay_index_ == 0 && base_link_tf.getOrigin().distance2(relay_front_vec) < 1.0 * 1.0) {
+  if (relay_index_ == 0 && base_link_tf.getOrigin().distance2(relay_front_vec) < 0.3 * 0.3) {
     relay_index_ = 1;
   }
 
-  if (relay_index_ == 1 && base_link_tf.getOrigin().distance2(relay_back_vec) < 1.0 * 1.0) {
+  if (relay_index_ == 1 && base_link_tf.getOrigin().distance2(relay_back_vec) < 0.3 * 0.3) {
     relay_index_ = 2;
   }
 
 
   path_msg_.header.stamp = ros::Time::now();
 
-  auto pose_from_tf = [](auto tf) {
-    geometry_msgs::PoseStamped pose;
+  geometry_msgs::PoseStamped pose;
+  pose.header.frame_id = pole_left_msg_->header.frame_id;
+  auto pose_from_tf = [&pose](auto tf) {
     pose.pose.position.x = tf.x();
     pose.pose.position.y = tf.y();
     pose.pose.position.z = tf.z();
